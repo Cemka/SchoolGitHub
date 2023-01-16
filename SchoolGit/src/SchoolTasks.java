@@ -27,4 +27,20 @@ public class SchoolTasks {
         System.out.println("S = " + tempSum);
     }
 
+    public int randomInt(int min, int max){
+        int x = (int)(Math.random()*((max-min)+1))+min;
+        return x;
+    }
+
+    public double randomDouble(double min, int max){
+        double x = (Math.random()*((max-min)+1))+min;
+        return x;
+    }
+
+    public void randomFive(int a, int b){
+        for (int i = 0; i < 5; i++){
+            System.out.println(randomInt(a,b));
+        }
+    }
+
 }
