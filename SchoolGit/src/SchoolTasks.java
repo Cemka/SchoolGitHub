@@ -38,8 +38,14 @@ public class SchoolTasks {
     }
 
     public void randomFive(int a, int b){
-        for (int i = 0; i < 5; i++){
-            System.out.println(randomInt(a,b));
+        if (a > b){
+            System.out.println("Введите коректное число");
+
+        }
+        else {
+            for (int i = 0; i < 5; i++) {
+                System.out.println(randomInt(a, b));
+            }
         }
     }
 
