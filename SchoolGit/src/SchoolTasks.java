@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 
 public class SchoolTasks {
     public static void Ski(Double p){
@@ -47,6 +47,32 @@ public class SchoolTasks {
                 System.out.println(randomInt(a, b));
             }
         }
+    }
+
+    public void amountFive(double []arr){
+        double max = arr[0];
+        for (int i = 0; i < arr.length; i++){
+            if (max < arr[i]){
+                max = arr[i];
+            }
+        }
+        System.out.println(max);
+    }
+
+    public int countOfNumbers(int num){
+        int count = 0;
+        while(num > 0){
+            num /= 10;
+            count++;
+        }
+        return count;
+    }
+
+    public void numberIsThreeNumbers(int num){
+        if (countOfNumbers(num) == 3){
+            System.out.println("YES");
+        }
+        else System.out.println("NO");
     }
 
 }
