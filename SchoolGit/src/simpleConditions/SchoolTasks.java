@@ -1,4 +1,4 @@
-
+package simpleConditions;
 
 public class SchoolTasks {
     public static void Ski(Double p){
@@ -73,6 +73,18 @@ public class SchoolTasks {
             System.out.println("YES");
         }
         else System.out.println("NO");
+    }
+
+    public double maxCount(double []arr){
+        double max = arr[0];
+
+        for (int i = 0; i < arr.length; i++){
+            if(arr[i] > max){
+                max = arr[i];
+            }
+        }
+
+        return max;
     }
 
 }
