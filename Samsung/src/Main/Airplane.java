@@ -5,6 +5,7 @@ public class Airplane {
     static String planeName = "Ilyushin-96";
     private int countOfPassengers;
     static int maxCountOfPassengers = 400;
+    public int countOfTryingEngine;
 
     public void setCountOfPassengers(int countOfPassengers) {
         this.countOfPassengers = countOfPassengers;
@@ -14,16 +15,17 @@ public class Airplane {
         return countOfPassengers;
     }
 
-    Fly f = new Fly();
-
     public int getCountOfTryingEngine() {
-        return f.getCountOfTryingEngine();
+        return countOfTryingEngine;
+    }
+
+    void resetErrorOfEngine(){
+        countOfTryingEngine = 0;
     }
 
     public class Fly{
         int percentOfPower;
         double height;
-        public int countOfTryingEngine;
 
         void enableEngine(){
             System.out.println("Engines are starting");
@@ -49,18 +51,12 @@ public class Airplane {
         public double getHeight() {
             return height;
         }
-
-        public int getCountOfTryingEngine(){
-            return  this.countOfTryingEngine;
-        }
-
-
     }
 
     public void fatalError(){
         class Errors{
             void checkProblemWithEngine(){
-                if (getCountOfTryingEngine() > 1){
+                if (getCountOfTryingEngine() < 2){
                     System.out.println("Engines are OK");
                 }
                 else
@@ -75,11 +71,9 @@ public class Airplane {
                     System.out.println("It's all OK with passengers");
             }
         }
+
         Errors errors = new Errors();
         errors.checkProblemWithCountOfPassengers();
         errors.checkProblemWithEngine();
     }
-
-
-
 }
